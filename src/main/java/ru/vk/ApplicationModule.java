@@ -25,6 +25,6 @@ public class ApplicationModule extends AbstractModule
 
   private boolean checkArgs(@NotNull final String[] args)
   {
-    return (args.length == 3) && args[0].contains("jdbc:postgresql://");
+    return (args.length == 4) && args[0].contains("jdbc:postgresql://");
   }
 }

@@ -19,10 +19,13 @@ public class Application
   {
     final Flyway flyway = Flyway
       .configure()
-      .dataSource(DBProperties.getConnection() + DBProperties.getName(), DBProperties.getUsername(), DBProperties.getPassword())
+      .dataSource(DBProperties.connection() + DBProperties.name(),
+        DBProperties.username(),
+        DBProperties.password())
+      //.cleanDisabled(false)
       .locations("db")
       .load();
-    flyway.clean();
+    //flyway.clean();
     flyway.migrate();
     System.out.println("Migrations applied successfully");
   }

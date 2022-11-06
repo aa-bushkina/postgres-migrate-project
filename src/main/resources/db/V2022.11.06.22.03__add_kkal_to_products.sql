@@ -1,0 +1,2 @@
+ALTER TABLE products
+    ADD kkal INT NOT NULL DEFAULT 0;

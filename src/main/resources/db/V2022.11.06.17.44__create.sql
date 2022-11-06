@@ -1,6 +1,6 @@
 CREATE TABLE tables
 (
-    table_num   SERIAL  NOT NULL,
+    table_num   INT  NOT NULL,
     seats_quantity INT NOT NULL,
     CONSTRAINT tables_pk PRIMARY KEY (table_num)
 );
@@ -8,7 +8,7 @@ CREATE TABLE tables
 CREATE TABLE orders
 (
     order_num   SERIAL  NOT NULL,
-    table_num_id INT NOT NULL REFERENCES tables (table_num) ON UPDATE CASCADE ON DELETE CASCADE,
+    table_num INT NOT NULL REFERENCES tables (table_num) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT orders_pk PRIMARY KEY (order_num)
 );
 
@@ -26,7 +26,6 @@ CREATE TABLE menu
     weight INT NOT NULL,
     price MONEY NOT NULL,
     section_id INT NOT NULL REFERENCES sections (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    quantity INT NOT NULL,
     CONSTRAINT menu_pk PRIMARY KEY (id)
 );
 
