@@ -1,10 +1,8 @@
 package ru.vk;
 
 import com.google.inject.Inject;
+import org.flywaydb.core.Flyway;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 public class Application
 {
@@ -19,6 +17,13 @@ public class Application
 
   public void makeDB()
   {
-
+    final Flyway flyway = Flyway
+      .configure()
+      .dataSource(DBProperties.getConnection() + DBProperties.getName(), DBProperties.getUsername(), DBProperties.getPassword())
+      .locations("db")
+      .load();
+    flyway.clean();
+    flyway.migrate();
+    System.out.println("Migrations applied successfully");
   }
 }

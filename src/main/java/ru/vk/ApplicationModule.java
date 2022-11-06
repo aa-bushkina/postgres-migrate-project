@@ -20,7 +20,7 @@ public class ApplicationModule extends AbstractModule
   @Override
   protected void configure()
   {
-    bind(DBProperties.class).toInstance(new DBProperties(args[0], args[1], args[2]));
+    bind(DBProperties.class).toInstance(new DBProperties(args[0], args[1], args[2], args[3]));
   }
 
   private boolean checkArgs(@NotNull final String[] args)

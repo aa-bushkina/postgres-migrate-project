@@ -9,14 +9,21 @@ public class DBProperties
   @NotNull
   String connection;
   @NotNull
-  String login;
+  String name;
+  @NotNull
+  String username;
   @NotNull
   String password;
 
-  public DBProperties(@NotNull String connection, @NotNull String login, @NotNull String password)
+
+  public DBProperties(@NotNull String connection,
+                      @NotNull String name,
+                      @NotNull String username,
+                      @NotNull String password)
   {
     this.connection = connection;
-    this.login = login;
+    this.name = name;
+    this.username = username;
     this.password = password;
   }
 }
