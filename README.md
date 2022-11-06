@@ -40,3 +40,5 @@ Design a fast food restaurant database:
 7) Ingredients for dishes are in a separate table
    - ID (primary key)
    - Name
+
+![BD](https://user-images.githubusercontent.com/77066690/200191136-500f1ace-dd43-49bd-9469-0abdcc4c8f8c.png)
